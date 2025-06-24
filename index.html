@@ -186,9 +186,26 @@
               <span class="venue"><a href="https://pubs.aip.org/aip/app">APL Photonics</a></span> /
               <a href="https://arxiv.org/pdf/2406.17810">Paper</a> /
               <a href="https://github.com/ScopeX-ASU/PIC2O-Sim">Code</a> /
+              <a data-bs-toggle="collapse" href="#abstract-pic2o" onclick="return false">abstract</a> /
               <a data-bs-toggle="collapse" href="#bibtex-pic2o" onclick="return false">bibtex</a>
             </div>
             <div class="keywords">Key Words: Digital Twin, Causality, Dynamic Convolution, Partial Differential Equation (PDE)</div>
+          </div>
+        </div>
+
+        <!-- abstract -->
+        <div class="collapse" id="abstract-pic2o">
+          <div class="row align-items-center">
+            <div class="col col-wrapper">
+              <p>Abstract: The finite-difference time-domain (FDTD) method, which is important in photonic hardware design flow, is widely adopted to solve time-domain Maxwell equations. 
+                However, FDTD is known for its prohibitive runtime cost, taking minutes to hours to simulate a single device. 
+                Recently, AI has been applied to realize orders-of-magnitude speedup in partial differential equation (PDE) solving. 
+                However, AI-based FDTD solvers for photonic devices have not been clearly formulated. 
+                Directly applying off-the-shelf models to predict the optical field dynamics shows unsatisfying fidelity and efficiency since the model primitives are agnostic to the unique physical properties of Maxwell equations and lack algorithmic customization. 
+                In this work, we thoroughly investigate the synergy between neural operator designs and the physical property of Maxwell equations and introduce a physics-inspired AI-based FDTD prediction framework PIC2O-Sim which features a causality-aware dynamic convolutional neural operator as its backbone model that honors the space-time causality constraints via careful receptive field configuration and explicitly captures the permittivity-dependent light propagation behavior via an efficient dynamic convolution operator. 
+                Meanwhile, we explore the trade-offs among prediction scalability, fidelity, and efficiency via a multi-stage partitioned time-bundling technique in autoregressive prediction. Multiple key techniques have been introduced to mitigate iterative error accumulation while maintaining efficiency advantages during autoregressive field prediction. 
+                Extensive evaluations on three challenging photonic device simulation tasks have shown the superiority of our PIC2O-Sim method, showing 51.2% lower roll-out prediction error, 23.5 times fewer parameters than state-of-the-art neural operators, providing 300-600x higher simulation speed than an open-source FDTD numerical solver.</p>
+            </div>
           </div>
         </div>
 
@@ -251,12 +268,28 @@
               <span class="venue"><a href="https://www.date-conference.com/">DATE 2025</a></span> /
               <a href="https://arxiv.org/pdf/2411.08210">Paper</a> /
               <a href="https://github.com/ScopeX-ASU/BOSON">Code</a> /
+              <a data-bs-toggle="collapse" href="#abstract-boson" onclick="return false">abstract</a> /
               <a data-bs-toggle="collapse" href="#bibtex-boson" onclick="return false">bibtex</a>
             </div>
-            <div class="keywords">Key Words: Topology Optimization, Knowledge Distillation, Inverse Design</div>
+            <div class="keywords">Key Words: Topology Optimization, Knowledge Distillation, Robustness, Inverse Design</div>
           </div>
         </div>
 
+        <!-- abstract -->
+        <div class="collapse" id="abstract-boson">
+          <div class="row align-items-center">
+            <div class="col col-wrapper">
+              <p>Abstract: Nanophotonic device design aims to optimize photonic structures to meet specific requirements across various applications. 
+                Inverse design has unlocked non-intuitive, high-dimensional design spaces, enabling the discovery of high-performance devices beyond heuristic or analytic methods. 
+                The adjoint method, which calculates gradients for all variables using just two simulations, enables efficient navigation of this complex space. 
+                However, many inverse-designed structures, while numerically plausible, are difficult to fabricate and sensitive to variations, limiting their practical use. 
+                The discrete nature with numerous local-optimal structures also pose significant optimization challenges, often causing gradient-based methods to converge on suboptimal designs. 
+                In this work, we formulate inverse design as a fabrication-restricted, discrete, probabilistic optimization problem and introduce BOSON<sup>-1</sup>, an end-to-end, variation-aware subspace optimization framework to address the challenges of manufacturability, robustness, and optimizability. 
+                To overcome optimization difficulty, we propose dense target-enhanced gradient flows to mitigate misleading local optima and introduce a conditional subspace optimization strategy to create high-dimensional tunnels to escape local optima. Furthermore, we significantly reduce the runtime associated with optimizing across exponential variation samples through an adaptive sampling-based robust optimization, ensuring both efficiency and variation robustness. 
+                On three representative photonic device benchmarks, our proposed inverse design methodology BOSON<sup>-1</sup> delivers fabricable structures and achieves the best convergence and performance under realistic variations, outperforming prior arts with 74.3% post-fabrication performance.</p>
+            </div>
+          </div>
+        </div>
         <!-- bibtex -->
         <div class="collapse" id="bibtex-boson">
           <div class="row align-items-center">
@@ -310,12 +343,27 @@
               <span class="venue"><a href="https://www.date-conference.com/">DATE 2025</a></span> /
               <a href="https://arxiv.org/pdf/2503.01046">Paper</a> /
               <a href="https://github.com/ScopeX-ASU/MAPS">Code</a> /
+              <a data-bs-toggle="collapse" href="#abstract-maps" onclick="return false">abstract</a> /
               <a data-bs-toggle="collapse" href="#bibtex-maps" onclick="return false">bibtex</a>
             </div>
             <div class="keywords">Key Words: Digital Twin, Dataset Acquisition, Adjoint Method</div>
           </div>
         </div>
 
+        <!-- abstract -->
+        <div class="collapse" id="abstract-maps">
+          <div class="row align-items-center">
+            <div class="col col-wrapper">
+              <p>Abstract: Inverse design has emerged as a transformative approach for photonic device optimization, enabling the exploration of high-dimensional, non-intuitive design spaces to create ultra-compact devices and advance photonic integrated circuits (PICs) in computing and interconnects. 
+                However, practical challenges, such as suboptimal device performance, limited manufacturability, high sensitivity to variations, computational inefficiency, and lack of interpretability, have hindered its adoption in commercial hardware. 
+                Recent advancements in AI-assisted photonic simulation and design offer transformative potential, accelerating simulations and design generation by orders of magnitude over traditional numerical methods. 
+                Despite these breakthroughs, the lack of an open-source, standardized infrastructure and evaluation benchmark limits accessibility and cross-disciplinary collaboration. 
+                To address this, we introduce MAPS, a multi-fidelity AI-augmented photonic simulation and inverse design infrastructure designed to bridge this gap. 
+                MAPS features three synergistic components: (1) MAPS-Data: A dataset acquisition framework for generating multi-fidelity, richly labeled devices, providing high-quality data for AI-for-optics research. (2) MAPS-Train: A flexible AI-for-photonics training framework offering a hierarchical data loading pipeline, customizable model construction, support for data- and physics-driven losses, and comprehensive evaluations. (3) MAPS-InvDes: An advanced adjoint inverse design toolkit that abstracts complex physics but exposes flexible optimization steps, integrates pre-trained AI models, and incorporates fabrication variation models. 
+                This infrastructure MAPS provides a unified, open-source platform for developing, benchmarking, and advancing AI-assisted photonic design workflows, accelerating innovation in photonic hardware optimization and scientific machine learning.</p>
+            </div>
+          </div>
+        </div>
         <!-- bibtex -->
         <div class="collapse" id="bibtex-maps">
           <div class="row align-items-center">
@@ -373,12 +421,28 @@
               <span class="venue"><a href="https://arxiv.org/pdf/2505.18377">Under Review</a></span> /
               <a href="https://arxiv.org/pdf/2505.18377">Paper</a> /
               <a href="https://github.com/ScopeX-ASU/SP2RINT">Code</a> /
+              <a data-bs-toggle="collapse" href="#abstract-sprint" onclick="return false">abstract</a> /
               <a data-bs-toggle="collapse" href="#bibtex-sprint" onclick="return false">bibtex</a>
             </div>
             <div class="keywords">Key Words: Constraint Optimization, Partial Differential Equation (PDE), Design for Manufacturing (DFM)</div>
           </div>
         </div>
 
+        <!-- abstract -->
+        <div class="collapse" id="abstract-sprint">
+          <div class="row align-items-center">
+            <div class="col col-wrapper">
+              <p>Abstract: DONNs leverage light propagation for efficient analog AI and signal processing. 
+                Advances in nanophotonic fabrication and metasurface-based wavefront engineering have opened new pathways to realize high-capacity DONNs across various spectral regimes. 
+                Training such DONN systems to determine the metasurface structures remains challenging. 
+                Heuristic methods are fast but oversimplify metasurfaces modulation, often resulting in physically unrealizable designs and significant performance degradation. 
+                Simulation-in-the-loop optimizes implementable metasurfaces via adjoint methods, but is computationally prohibitive and unscalable. To address these limitations, we propose SP2RINT, a spatially decoupled, progressive training framework that formulates DONN training as a PDE-constrained learning problem. 
+                Metasurface responses are first relaxed into freely trainable transfer matrices with a banded structure. We then progressively enforce physical constraints by alternating between transfer matrix training and adjoint-based inverse design, avoiding per-iteration PDE solves while ensuring final physical realizability. 
+                To further reduce runtime, we introduce a physics-inspired, spatially decoupled inverse design strategy based on the natural locality of field interactions. This approach partitions the metasurface into independently solvable patches, enabling scalable and parallel inverse design with system-level calibration. 
+                Evaluated across diverse DONN training tasks, SP2RINT achieves digital-comparable accuracy while being 1825 times faster than simulation-in-the-loop approaches. By bridging the gap between abstract DONN models and implementable photonic hardware, SP2RINT enables scalable, high-performance training of physically realizable meta-optical neural systems.</p>
+            </div>
+          </div>
+        </div>
         <!-- bibtex -->
         <div class="collapse" id="bibtex-sprint">
           <div class="row align-items-center">
@@ -428,12 +492,28 @@
               <span class="venue"><a href="https://www.aspdac.com/aspdac2025/">ASPDAC 2025</a></span> /
               <a href="https://arxiv.org/pdf/2410.01313">Paper</a> /
               <a href="https://github.com/ScopeX-ASU/ADEPT-Z">Code</a> /
+              <a data-bs-toggle="collapse" href="#abstract-adept0" onclick="return false">abstract</a> /
               <a data-bs-toggle="collapse" href="#bibtex-adept0" onclick="return false">bibtex</a>
             </div>
             <div class="keywords">Key Words: Hardware Architecture Search (HAS), Genetic Algorithm (GA), Photonic Tensor Cores</div>
           </div>
         </div>
 
+        <!-- abstract -->
+        <div class="collapse" id="abstract-adept0">
+          <div class="row align-items-center">
+            <div class="col col-wrapper">
+              <p>Abstract: Photonic tensor cores (PTCs) are essential building blocks for optical artificial intelligence (AI) accelerators based on programmable photonic integrated circuits. 
+                Most PTC designs today are manually constructed, with low design efficiency and unsatisfying solution quality. 
+                This makes it challenging to meet various hardware specifications and keep up with rapidly evolving AI applications. 
+                Prior work has explored gradient-based methods to learn a good PTC structure differentiably. 
+                However, it suffers from slow training speed and optimization difficulty when handling multiple non-differentiable objectives and constraints. 
+                Therefore, in this work, we propose a more flexible and efficient zero-shot multi-objective evolutionary topology search framework ADEPT-Z that explores Pareto-optimal PTC designs with advanced devices in a larger search space. 
+                Multiple objectives can be co-optimized while honoring complicated hardware constraints. 
+                With only less than 3 hours of search, we can obtain tens of diverse Pareto-optimal solutions, 100x faster than the prior gradient-based method, outperforming prior manual designs with 2x higher accuracy weighted area-energy efficiency.</p>
+            </div>
+          </div>
+        </div>
         <!-- bibtex -->
         <div class="collapse" id="bibtex-adept0">
           <div class="row align-items-center">
